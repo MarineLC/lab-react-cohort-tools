@@ -1,5 +1,8 @@
 import logo from "./../assets/logo-ironhack-blue.png";
 import { NavLink } from 'react-router-dom'
+/*A link to /profile (User Profile Page) on the user icon in the top right corner.
+
+A link to / (Home Page) on the logo in the top left corner.*/
 
 function Navbar() {
   return (
@@ -8,19 +11,25 @@ function Navbar() {
         <div className="flex items-center space-x-2 w-1/4">
 
           {/* Home Button (Logo) */}
+          <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}>
           <button className="flex items-center text-l py-1">
             <img src={logo} alt="Logo" className="h-8 w-auto" />
           </button>
+          </NavLink>
         </div>
-
+        
         <div className="flex justify-center w-1/2">
         <span className="text-xl">
             Cohort Tools
           </span>
         </div>
-
+       
         <div className="w-1/4 flex justify-end mr-4">
           {/* User Profile Button */}
+          <NavLink to='/profile' className={({ isActive }) => (isActive ? 'active' : '')}>
+            
+          
+
           <button className="flex items-center text-l py-1">
             <img
               src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/labs/lab-cohort-tools-routing/profile-1.png"
@@ -28,7 +37,7 @@ function Navbar() {
               className="h-10 w-auto border-solid border border-white rounded-3xl p-1"
             />
           </button>
-
+          </NavLink>
         </div>
       </div>
     </nav>

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import StudentCard from "../components/StudentCard";
-
+import { NavLink } from 'react-router-dom'
 import studentsData from "../assets/students.json";
-
+import { Navigate } from 'react-router-dom'
+/*A link to /students/:studentId (Student Details Page) on each student list item in the list of students. The link should contain the student's _id as a URL parameter.
+<Navigate to='/students/:{student._id}' className={({ isActive }) => (isActive ? 'active' : '')}></Navigate>/>*/
 function HomePage() {
   // eslint-disable-next-line no-unused-vars
   const [students, setStudents] = useState(studentsData);
@@ -20,11 +22,21 @@ function HomePage() {
 
       {students &&
         students.map((student) => {
+          
           return (
               <StudentCard key={student._id} {...student} />
+              
           );
         })}
+        
+        
+          
+       
+        
+           
+        
     </div>
+    
   );
 }
 

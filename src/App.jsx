@@ -20,13 +20,13 @@ function App() {
       <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/profile' element={<UserProfilePage />} />
-      <Route path='/students/:studentId ' element={<UserProfilePage />} />
+      <Route path='/students/:studentId ' element={<StudentDetailsPage />} />
       </Routes>
         
 
-        <StudentDetailsPage />
+        
 
-        <UserProfilePage />
+      
       </div>
 
     </div>

@@ -1,5 +1,8 @@
 import placeholderImage from "./../assets/placeholder.png";
 import studentsData from "./../assets/students.json";
+import { NavLink } from 'react-router-dom'
+
+/*A link to / (Home Page) on the Back button that takes you back.*/
 
 function StudentDetailsPage() {
 
@@ -67,10 +70,11 @@ function StudentDetailsPage() {
 
 
             {/* Back button */}
+            <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}>
             <button className="text-white px-4 py-2 rounded bg-green-500 hover:bg-green-600 transition duration-300 ease-in-out">
               Back
             </button>
-
+            </NavLink>
           </>
         )}
       </div>
