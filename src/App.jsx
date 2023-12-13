@@ -4,6 +4,11 @@ import HomePage from "./pages/HomePage";
 import StudentDetailsPage from "./pages/StudentDetailsPage";
 import UserProfilePage from "./pages/UserProfilePage";
 
+import { Route, Routes } from 'react-router-dom'
+
+/*Route / for the HomePage.
+Route /students/:studentId for the StudentDetailsPage.
+Route /profile for the UserProfilePage.*/
 
 function App() {
 
@@ -12,7 +17,12 @@ function App() {
       <Navbar />
 
       <div className="pages">
-        <HomePage />
+      <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/profile' element={<UserProfilePage />} />
+      <Route path='/students/:studentId ' element={<UserProfilePage />} />
+      </Routes>
+        
 
         <StudentDetailsPage />
 
